@@ -96,13 +96,13 @@ export default function Home() {
 
                         {
                             data.transporte === 'Maritimo' && <>
-                                <InputFlotante type="number" id="floating_5" onChange={onChangeHandler} defaultValue={data.transporte} required label={`Costo Transporte ${data.transporte}`} />
+                                <InputFlotante type="number" id="floating_5" onChange={onChangeHandler} defaultValue={data.transporte} required label={`Costo Transporte Terrestre`} />
                             </>
                         }
 
                         <InputFlotante type="number" id="floating_6" onChange={onChangeHandler} defaultValue={data['Seguro']} required label={'Seguro'} />
 
-                        {/* <table>
+                        <table>
                             <tbody>
                                 <tr>
                                     <td>MERCANCIA</td>
@@ -117,16 +117,16 @@ export default function Home() {
                                     <td>{data['Valor FOB']}</td>
                                 </tr>
                                 <tr>
-                                    <td>{(`Transporte ${data.transporte} valor`).toUpperCase()}</td>
+                                    <td>{(`Costo Transporte ${data.transporte}`).toUpperCase()}</td>
                                     <td>{data[`Transporte ${data.transporte} valor`]}</td>
                                 </tr>
                                 <tr>
-                                    <td>{(`Transporte ${data.transporte} valor %`).toUpperCase()}</td>
+                                    <td>{(`Valor Transporte ${data.transporte} %`).toUpperCase()}</td>
                                     <td>{data[`Transporte ${data.transporte} valor`] * (25 / 100)}</td>
                                 </tr>
                                 <tr>
                                     <td>SEGURO</td>
-                                    <td>{data['transporte']}</td>
+                                    <td>{data['Seguro']}</td>
                                 </tr>
                                 <tr>
                                     <td>CIF FRONTERA</td>
@@ -201,7 +201,7 @@ export default function Home() {
                                     </td>
                                 </tr>
                             </tbody>
-                        </table> */}
+                        </table>
 
 
 
