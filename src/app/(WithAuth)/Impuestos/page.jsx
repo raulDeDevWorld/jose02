@@ -86,14 +86,23 @@ export default function Home() {
                     <form className={`relative space-y-6 w-[100%]  z-10 `} >
                         <h5 className="text-[16px] text-center font-bold text-[#636363] z-[50]">IMPUESTOS DE IMPORTACION</h5>
                         <InputEspecial data={mercancias} node={'MERCANCIA'} inputRef={inputRef} focusTxt='MERCANCIA' id='floating_1' select={handlerSelect}></InputEspecial>
-                        <SelectSimple arr={['Terrestre', 'Maritimo', 'Aereo']} name='transporte' click={handlerClickSelect} defaultValue={selectValue} uuid='8768798'></SelectSimple>
+                        <SelectSimple arr={['Terrestre', 'Maritimo', 'Aereo']} name='transporte' click={handlerClickSelect} defaultValue={selectValue} uuid='8768798' label='Tipo de transporte'></SelectSimple>
                         <InputFlotante type="number" id="floating_3" onChange={onChangeHandler} defaultValue={data['Valor FOB']} required label={'Valor FOB'} />
                         {
                             data.transporte && <>
-                                <InputFlotante type="number" id="floating_4" onChange={onChangeHandler} defaultValue={data.transporte} required label={`Transporte ${data.transporte} valor`} />
+                                <InputFlotante type="number" id="floating_4" onChange={onChangeHandler} defaultValue={data.transporte} required label={`Costo Transporte ${data.transporte}`} />
                             </>
                         }
-                        <table>
+
+                        {
+                            data.transporte === 'Maritimo' && <>
+                                <InputFlotante type="number" id="floating_5" onChange={onChangeHandler} defaultValue={data.transporte} required label={`Costo Transporte ${data.transporte}`} />
+                            </>
+                        }
+
+                        <InputFlotante type="number" id="floating_6" onChange={onChangeHandler} defaultValue={data['Seguro']} required label={'Seguro'} />
+
+                        {/* <table>
                             <tbody>
                                 <tr>
                                     <td>MERCANCIA</td>
@@ -192,7 +201,7 @@ export default function Home() {
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> */}
 
 
 
